@@ -1,32 +1,34 @@
 {
-  "name": "future-history-os",
+  "name": "market-signal-engine",
   "version": "1.0.0",
-  "description": "A history book that writes itself based on prediction markets",
+  "description": "Trading signals generated from prediction market data",
   "scripts": {
     "fetch": "tsx lib/oracle.ts",
     "generate": "tsx lib/historian.ts",
-    "generate:doomer": "tsx lib/historian.ts doomer",
-    "generate:utopian": "tsx lib/historian.ts utopian",
+    "generate:aggressive": "tsx lib/historian.ts aggressive",
+    "generate:conservative": "tsx lib/historian.ts conservative",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
+    "framer-motion": "^11.15.0",
     "next": "^15.1.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "framer-motion": "^11.15.0"
+    "recharts": "^3.6.0",
+    "yahoo-finance2": "^3.10.2"
   },
   "devDependencies": {
     "@types/node": "^20.10.6",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "typescript": "^5.3.3",
-    "tsx": "^4.7.0",
+    "autoprefixer": "^10.4.16",
     "dotenv": "^16.4.5",
-    "tailwindcss": "^3.4.1",
     "postcss": "^8.4.33",
-    "autoprefixer": "^10.4.16"
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
   }
 }

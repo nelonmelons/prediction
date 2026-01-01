@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-01-01T03:59:47.878Z",
+  "strategy": "balanced",
+  "analyses": [
+    {
+      "period": "2025",
+      "summary": "Prediction markets show extreme certainty for Gold prices and significant bearish sentiment on Brazilian economic indicators. Other sectors show high uncertainty.",
+      "signals": [
+        {
+          "asset": "Gold",
+          "category": "Commodities",
+          "signal": "BUY",
+          "confidence": 100,
+          "priceTarget": "Above $4000",
+          "rationale": "Markets overwhelmingly predict Gold will close above $4000, indicating strong bullish momentum and expected price appreciation.",
+          "timeframe": "End of 2025",
+          "key_events": [
+            "Gold close above $4000 at end of 2025"
+          ]
+        },
+        {
+          "asset": "Brazil Unemployment",
+          "category": "Economy",
+          "signal": "SELL",
+          "confidence": 99.8,
+          "priceTarget": "Above 6.3%",
+          "rationale": "Strong conviction that Brazil's unemployment will remain above 6.3% for Q4 2025, suggesting an unfavorable economic outlook.",
+          "timeframe": "Q4 2025",
+          "key_events": [
+            "Brazil unemployment below 6.3% for Q4 2025"
+          ]
+        },
+        {
+          "asset": "Brazil Inflation",
+          "category": "Indices",
+          "signal": "SELL",
+          "confidence": 99.3,
+          "priceTarget": "Above 5.50%",
+          "rationale": "High probability that Brazil's 12-month inflation will exceed 5.50% in December 2025, indicating inflationary pressures.",
+          "timeframe": "December 2025",
+          "key_events": [
+            "Brazil’s 12-month inflation below 5.50% for December 2025"
+          ]
+        },
+        {
+          "asset": "SpaceX Starship",
+          "category": "Crypto",
+          "signal": "BUY",
+          "confidence": 99.7,
+          "priceTarget": "4-6 successful launches",
+          "rationale": "Markets assign very high probability to 4-6 successful SpaceX Starship launches, signaling positive developments in space exploration technology.",
+          "timeframe": "2025",
+          "key_events": [
+            "4-6 SpaceX Starship launches successfully reach Space in 2025"
+          ]
+        },
+        {
+          "asset": "US Revenue Collection",
+          "category": "Economy",
+          "signal": "HOLD",
+          "confidence": 37.6,
+          "priceTarget": "Below $100b",
+          "rationale": "Low confidence in US revenue collection being below $100b; current probabilities suggest this is unlikely to materialize.",
+          "timeframe": "2025",
+          "key_events": [
+            "US collect less than $100b in revenue in 2025"
+          ]
+        }
+      ],
+      "risk_level": "medium"
+    },
+    {
+      "period": "2026",
+      "summary": "Market data for 2026 shows extremely low probabilities across all prediction markets. No clear trends or high-conviction signals emerge for actionable trading.",
+      "signals": [
+        {
+          "asset": "Edmonton Oilers",
+          "category": "Commodities",
+          "signal": "HOLD",
+          "confidence": 9,
+          "priceTarget": null,
+          "rationale": "Low probability of winning the Stanley Cup suggests no actionable trading signal.",
+          "timeframe": "2026",
+          "key_events": [
+            "2026 NHL Stanley Cup"
+          ]
+        },
+        {
+          "asset": "Vegas Golden Knights",
+          "category": "Commodities",
+          "signal": "HOLD",
+          "confidence": 7,
+          "priceTarget": null,
+          "rationale": "Low probability of winning the Stanley Cup suggests no actionable trading signal.",
+          "timeframe": "2026",
+          "key_events": [
+            "2026 NHL Stanley Cup"
+          ]
+        },
+        {
+          "asset": "OpenAI Hardware",
+          "category": "Crypto",
+          "signal": "HOLD",
+          "confidence": 5,
+          "priceTarget": null,
+          "rationale": "Low probability of new hardware launch by March 2026 indicates no clear market direction.",
+          "timeframe": "March 2026",
+          "key_events": [
+            "OpenAI new consumer hardware product launch"
+          ]
+        },
+        {
+          "asset": "Netherlands World Cup",
+          "category": "Crypto",
+          "signal": "HOLD",
+          "confidence": 3,
+          "priceTarget": null,
+          "rationale": "Very low probability of Netherlands winning the World Cup suggests no actionable signal.",
+          "timeframe": "2026",
+          "key_events": [
+            "2026 FIFA World Cup"
+          ]
+        },
+        {
+          "asset": "GTA VI",
+          "category": "Equities",
+          "signal": "HOLD",
+          "confidence": 3,
+          "priceTarget": null,
+          "rationale": "Low probability of GTA VI release before June 2026 suggests no clear equity market movement.",
+          "timeframe": "June 2026",
+          "key_events": [
+            "GTA VI release"
+          ]
+        }
+      ],
+      "risk_level": "low"
+    }
+  ]
+}

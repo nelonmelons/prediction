@@ -96,7 +96,11 @@ Return ONLY valid JSON with this structure:
 ${topEvents
   .map(
     (e, i) =>
-      `${i + 1}. [${(e.prob * 100).toFixed(1)}%] ${e.event}\n   Category: ${e.category}${e.ticker ? ` | Ticker: ${e.ticker}` : ""}${e.priceTarget ? ` | Target: $${e.priceTarget}` : ""}${e.signal ? ` | Signal: ${e.signal}` : ""}`
+      `${i + 1}. [${(e.prob * 100).toFixed(1)}%] ${e.event}\n   Category: ${
+        e.category
+      }${e.ticker ? ` | Ticker: ${e.ticker}` : ""}${
+        e.priceTarget ? ` | Target: $${e.priceTarget}` : ""
+      }${e.signal ? ` | Signal: ${e.signal}` : ""}`
   )
   .join("\n\n")}
 
@@ -116,7 +120,9 @@ Generate 3-8 actionable trading signals based on this data. Focus on the highest
       throw new Error("Generated analysis missing required fields");
     }
 
-    console.log(`✅ Generated ${analysis.signals.length} signals for ${period}`);
+    console.log(
+      `✅ Generated ${analysis.signals.length} signals for ${period}`
+    );
 
     return analysis;
   } catch (error) {
@@ -138,9 +144,7 @@ export async function generateTimelineAnalysis(
   const analyses: MarketAnalysis[] = [];
   const years = Object.keys(timeline).sort();
 
-  console.log(
-    `\n📊 Generating trading signals for ${years.length} periods...`
-  );
+  console.log(`\n📊 Generating trading signals for ${years.length} periods...`);
   if (bias) {
     console.log(`📈 Strategy: ${bias.toUpperCase()}`);
   }
@@ -212,15 +216,8 @@ export async function generateSignalsFile(
   }
 }
 
-// Auto-run when executed directly
-if (typeof require !== "undefined" && require.main === module) {
-  generateSignalsFile().catch(console.error);
-}
-  }
-}
-
 // CLI execution
-if (require.main === module) {
-  const bias = process.argv[2] as "doomer" | "utopian" | null;
-  generateTimelineFile(bias).catch(console.error);
+if (typeof require !== "undefined" && require.main === module) {
+  const strategy = process.argv[2] as "aggressive" | "conservative" | null;
+  generateSignalsFile(strategy).catch(console.error);
 }

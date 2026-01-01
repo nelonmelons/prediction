@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Future History - A Self-Writing Timeline",
+  title: "Market Signals - AI-Powered Trading Insights",
   description:
-    "A history book that writes itself based on real-time prediction markets",
+    "Real-time trading signals generated from prediction market data using AI",
 };
 
 export default function RootLayout({

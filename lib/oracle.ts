@@ -78,29 +78,88 @@ function categorizeEvent(title: string, description: string): string {
 
   const categories: { [key: string]: string[] } = {
     Equities: [
-      "stock", "share", "equity", "s&p", "nasdaq", "dow", "ipo", 
-      "apple", "google", "microsoft", "amazon", "tesla", "nvidia", "meta",
-      "tsla", "aapl", "googl", "msft", "amzn", "nvda"
+      "stock",
+      "share",
+      "equity",
+      "s&p",
+      "nasdaq",
+      "dow",
+      "ipo",
+      "apple",
+      "google",
+      "microsoft",
+      "amazon",
+      "tesla",
+      "nvidia",
+      "meta",
+      "tsla",
+      "aapl",
+      "googl",
+      "msft",
+      "amzn",
+      "nvda",
     ],
     Commodities: [
-      "gold", "silver", "oil", "crude", "copper", "platinum",
-      "commodity", "wheat", "corn", "natural gas", "wti", "brent"
+      "gold",
+      "silver",
+      "oil",
+      "crude",
+      "copper",
+      "platinum",
+      "commodity",
+      "wheat",
+      "corn",
+      "natural gas",
+      "wti",
+      "brent",
     ],
     Crypto: [
-      "bitcoin", "ethereum", "crypto", "btc", "eth", "blockchain",
-      "solana", "cardano", "altcoin", "defi"
+      "bitcoin",
+      "ethereum",
+      "crypto",
+      "btc",
+      "eth",
+      "blockchain",
+      "solana",
+      "cardano",
+      "altcoin",
+      "defi",
     ],
     Indices: [
-      "index", "indices", "s&p 500", "nasdaq 100", "dow jones",
-      "russell", "vix", "market index"
+      "index",
+      "indices",
+      "s&p 500",
+      "nasdaq 100",
+      "dow jones",
+      "russell",
+      "vix",
+      "market index",
     ],
     Forex: [
-      "dollar", "euro", "yen", "pound", "currency", "forex", "fx",
-      "usd", "eur", "gbp", "jpy", "exchange rate"
+      "dollar",
+      "euro",
+      "yen",
+      "pound",
+      "currency",
+      "forex",
+      "fx",
+      "usd",
+      "eur",
+      "gbp",
+      "jpy",
+      "exchange rate",
     ],
     Economy: [
-      "fed", "interest rate", "inflation", "recession", "gdp",
-      "unemployment", "cpi", "treasury", "bond", "yield"
+      "fed",
+      "interest rate",
+      "inflation",
+      "recession",
+      "gdp",
+      "unemployment",
+      "cpi",
+      "treasury",
+      "bond",
+      "yield",
     ],
   };
 
@@ -159,26 +218,46 @@ function extractPriceTarget(text: string): number | undefined {
 /**
  * Determine trading signal based on probability and question phrasing
  */
-function determineSignal(question: string, prob: number): "bullish" | "bearish" | "neutral" {
+function determineSignal(
+  question: string,
+  prob: number
+): "bullish" | "bearish" | "neutral" {
   const text = question.toLowerCase();
-  const bearishWords = ["below", "fall", "decline", "drop", "crash", "less than", "under"];
-  const bullishWords = ["above", "rise", "increase", "surge", "rally", "more than", "over", "reach"];
-  
-  const isBearishQuestion = bearishWords.some(word => text.includes(word));
-  const isBullishQuestion = bullishWords.some(word => text.includes(word));
-  
+  const bearishWords = [
+    "below",
+    "fall",
+    "decline",
+    "drop",
+    "crash",
+    "less than",
+    "under",
+  ];
+  const bullishWords = [
+    "above",
+    "rise",
+    "increase",
+    "surge",
+    "rally",
+    "more than",
+    "over",
+    "reach",
+  ];
+
+  const isBearishQuestion = bearishWords.some((word) => text.includes(word));
+  const isBullishQuestion = bullishWords.some((word) => text.includes(word));
+
   // High probability bearish question = bearish signal
   if (isBearishQuestion && prob > 0.6) return "bearish";
-  
+
   // High probability bullish question = bullish signal
   if (isBullishQuestion && prob > 0.6) return "bullish";
-  
+
   // Low probability bearish question = bullish signal (inverse)
   if (isBearishQuestion && prob < 0.4) return "bullish";
-  
+
   // Low probability bullish question = bearish signal (inverse)
   if (isBullishQuestion && prob < 0.4) return "bearish";
-  
+
   return "neutral";
 }
 
@@ -368,7 +447,42 @@ function processPolymarketEvents(events: PolymarketEvent[]): PredictionEvent[] {
     }
 
     // Extract trading signal data
-    const ticker = extractTicker(event.question + \" \" + (event.description || \"\"));\n    const priceTarget = extractPriceTarget(event.question + \" \" + (event.description || \"\"));\n    const category = categorizeEvent(event.question, event.description || \"\");\n    const signal = determineSignal(event.question, prob);\n    const timeframe = year ? `${year}` : undefined;\n\n    // Only include finance-related predictions\n    if (category === \"Other\") {\n      skipReasons.noYear++; // Reuse this counter for non-finance events\n      continue;\n    }\n\n    predictions.push({\n      event: event.question,\n      prob: prob,\n      category,\n      confidence: getConfidence(prob),\n      source: \"polymarket\",\n      ticker,\n      priceTarget,\n      timeframe,\n      signal,\n    });\n  }\n\n  // Debug output\n  console.log(\"\\n🔍 Filtering breakdown:\");\n  console.log(`   ❌ No title: ${skipReasons.noTitle}`);\n  console.log(`   ❌ Low volume (<$5k): ${skipReasons.lowVolume}`);\n  console.log(`   ❌ Non-finance markets: ${skipReasons.noYear}`);\n  console.log(`   ❌ No prices: ${skipReasons.noPrices}`);\n  console.log(`   ❌ Invalid probability: ${skipReasons.invalidProb}`);
+    const ticker = extractTicker(
+      event.question + " " + (event.description || "")
+    );
+    const priceTarget = extractPriceTarget(
+      event.question + " " + (event.description || "")
+    );
+    const category = categorizeEvent(event.question, event.description || "");
+    const signal = determineSignal(event.question, prob);
+    const timeframe = year ? `${year}` : undefined;
+
+    // Only include finance-related predictions
+    if (category === "Other") {
+      skipReasons.noYear++; // Reuse this counter for non-finance events
+      continue;
+    }
+
+    predictions.push({
+      event: event.question,
+      prob: prob,
+      category,
+      confidence: getConfidence(prob),
+      source: "polymarket",
+      ticker,
+      priceTarget,
+      timeframe,
+      signal,
+    });
+  }
+
+  // Debug output
+  console.log("\n🔍 Filtering breakdown:");
+  console.log(`   ❌ No title: ${skipReasons.noTitle}`);
+  console.log(`   ❌ Low volume (<$5k): ${skipReasons.lowVolume}`);
+  console.log(`   ❌ Non-finance markets: ${skipReasons.noYear}`);
+  console.log(`   ❌ No prices: ${skipReasons.noPrices}`);
+  console.log(`   ❌ Invalid probability: ${skipReasons.invalidProb}`);
 
   // Sample some events for debugging
   if (events.length > 0 && predictions.length === 0) {
