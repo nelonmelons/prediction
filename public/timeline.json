@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-01-01T03:42:30.631Z",
+  "bias": "neutral",
+  "chapters": [
+    {
+      "year": 2025,
+      "headline": "Gold Surges, Movies Soar, and Space Ascends",
+      "narrative": "2025 marked a seismic shift in asset valuation as gold shattered previous records, closing the year well above $4000. This unprecedented surge, driven by complex technological advancements and global economic recalibrations, redefined 'safe haven' assets. Concurrently, the entertainment landscape was dramatically altered by the colossal success of 'A Minecraft Movie,' which dominated the box office, proving AI's burgeoning influence in creative industries and solidifying its position as the year's top-grossing film. The political sphere remained stable, with key leadership positions unchanged and technological protocols in Bitcoin remaining unactivated.",
+      "visual_prompt": "A panoramic view of a bustling New York Stock Exchange trading floor in 2025, with traders cheering as a ticker displays gold prices soaring past $4000. In the background, a giant screen shows a scene from 'A Minecraft Movie.' Dramatic, high-contrast lighting, realistic digital painting style."
+    },
+    {
+      "year": 2026,
+      "headline": "Global Stages: Sports Echoes, Shifting Tides",
+      "narrative": "The year 2026 pulsed with the roar of global competition. Italy, a perennial powerhouse, secured its place in the 2026 FIFA World Cup, reaffirming its soccer pedigree. The international stage, however, remained elusive for Ukraine and Poland, their World Cup dreams unfulfilled. In North America, the NBA landscape saw the Oklahoma City Thunder fall short of championship glory, while the NFL's NFC conference remained a fierce battleground, with no single team dominating the championship race to capture widespread attention. The NHL's Colorado Avalanche also failed to hoist the Stanley Cup, highlighting the parity in professional sports.",
+      "visual_prompt": "A wide, dynamic shot of a packed Italian football stadium under bright stadium lights, jubilant fans celebrating a World Cup qualification goal. The aesthetic is gritty and realistic, emphasizing the raw emotion of the moment, with a slightly desaturated, newsreel-like color palette."
+    },
+    {
+      "year": 2027,
+      "headline": "AI's Shadow Looms, Geopolitics Unchanged",
+      "narrative": "The year 2027 unfolded with a whisper of the artificial intelligence revolution, yet its tangible impact remained largely confined to research labs and speculative fiction. While AI development continued its relentless pace, no earth-shattering breakthroughs directly reshaped global economies or societal structures within the year. The much-discussed leadership transition in China did not materialize, with Xi Jinping remaining firmly in power, defying earlier low-probability predictions and underscoring the resilience of established political systems against premature speculation. The world instead navigated familiar geopolitical tensions and economic undercurrents, the future potential of AI a distant hum rather than an immediate roar.",
+      "visual_prompt": "A dimly lit, futuristic server room humming with unseen power. Abstract holographic AI network projections flicker, dwarfed by a stern, stoic portrait of Xi Jinping on a massive screen. Cyberpunk aesthetic, dramatic chiaroscuro lighting, foreboding mood."
+    },
+    {
+      "year": 2028,
+      "headline": "The Uncontested Nomination",
+      "narrative": "The 2028 presidential race saw a surprising lack of competition within the Democratic party. After a period of intense speculation and a crowded primary field, it became clear early on that no single challenger could gain traction against the incumbent administration's chosen successor. The established party apparatus, wary of internal division, coalesced behind a candidate who promised stability and a continuation of existing policies. Major figures who had been considered frontrunners saw their candidacies falter amidst shifting political winds and strategic missteps, leaving the path clear for a near-unanimous nomination. This outcome signaled a desire for continuity over radical change, shaping the political landscape for the upcoming general election.",
+      "visual_prompt": "A dimly lit Democratic National Convention stage in 2028. A single, confident figure stands at the podium, bathed in a spotlight. The crowd is a blur of raised hands and American flags. The mood is somber but determined, rendered in a gritty, photojournalistic style."
+    }
+  ]
+}
